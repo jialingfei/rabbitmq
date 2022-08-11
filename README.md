@@ -1,3 +1,10 @@
+### 记录
+```angular2html
+# 登录
+http://localhost:15672/#/
+#用户名 guest
+#密码 guest
+```
 ### rabbitmq 使用
 
 ```
