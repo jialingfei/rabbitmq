@@ -16,7 +16,7 @@ $connection = new AMQPStreamConnection("127.0.0.1","5672","root","root","/");
 #channel
 $channel = $connection->channel();
 
-#交换机名称
+#交换机名称  #DIRECT模式（定向）
 $exchange_name = "tiramisu_exchange";
 $channel->exchange_declare($exchange_name,AMQP_EX_TYPE_DIRECT,false,true,false);
 
