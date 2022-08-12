@@ -45,6 +45,7 @@ http://localhost:15672/#/
 ### rabbitmq 使用
 
 ```
+# 基本操作（简单模式）
 send.php 生产消息
 consume.php  消费消息
 ```
