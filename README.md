@@ -42,13 +42,7 @@ http://localhost:15672/#/
    * 远程服务端S获取消息，然后再写入另一个消息队列，向原始客户端 Client 响应消息处理结果
      ![routing](./resource/img/rabbitmq-rpc.png)
 
-### rabbitmq 使用
+### rabbitmq 具体使用
 
-```
-# 基本操作（direct模式 定向）
-send.php 生产消息
-consume.php  消费消息
-```
-
- 开启两个终端，分别执行 php send.php; php sonsume.php;
-![测试示例](./resource/img/rabbitmq-test-work.png)
+1. [direct模式 定向](./direct)
+2. [fanout模式 广播](./fanout)

@@ -96,7 +96,7 @@ abstract class PKCS1 extends Progenitor
             }
             $ecParams = self::loadCurveByParam($ecParams);
 
-            // comparing $ecParams and $components['curve'] directly won't work because they'll have different Math\Common\FiniteField classes
+            // comparing $ecParams and $components['curve'] directly won't direct because they'll have different Math\Common\FiniteField classes
             // even if the modulo is the same
             if (isset($components['curve']) && self::encodeParameters($ecParams, false, []) != self::encodeParameters($components['curve'], false, [])) {
                 throw new \RuntimeException('EC PARAMETERS does not correspond to EC PRIVATE KEY');

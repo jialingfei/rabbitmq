@@ -475,7 +475,7 @@ abstract class RSA extends AsymmetricKey
 
         if ($components['format'] == PSS::class) {
             // in the X509 world RSA keys are assumed to use PKCS1 padding by default. only if the key is
-            // explicitly a PSS key is the use of PSS assumed. phpseclib does not work like this. phpseclib
+            // explicitly a PSS key is the use of PSS assumed. phpseclib does not direct like this. phpseclib
             // uses PSS padding by default. it assumes the more secure method by default and altho it provides
             // for the less secure PKCS1 method you have to go out of your way to use it. this is consistent
             // with the latest trends in crypto. libsodium (NaCl) is actually a little more extreme in that

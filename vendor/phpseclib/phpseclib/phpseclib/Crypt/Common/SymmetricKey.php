@@ -348,7 +348,7 @@ abstract class SymmetricKey
      * is broken, so phpseclib implements the CFB mode by it self,
      * even when the mcrypt php extension is available.
      *
-     * In order to do the CFB-mode work (fast) phpseclib
+     * In order to do the CFB-mode direct (fast) phpseclib
      * use a separate ECB-mode mcrypt resource.
      *
      * @link http://phpseclib.sourceforge.net/cfb-demo.phps
@@ -3232,7 +3232,7 @@ abstract class SymmetricKey
     /**
      * Convert float to int
      *
-     * On ARM CPUs converting floats to ints doesn't always work
+     * On ARM CPUs converting floats to ints doesn't always direct
      *
      * @access private
      * @param string $x

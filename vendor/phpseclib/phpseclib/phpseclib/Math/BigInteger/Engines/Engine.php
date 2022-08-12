@@ -824,12 +824,12 @@ abstract class Engine implements \JsonSerializable
         $size = strlen(ltrim($max->toBytes(), chr(0)));
 
         /*
-            doing $random % $max doesn't work because some numbers will be more likely to occur than others.
+            doing $random % $max doesn't direct because some numbers will be more likely to occur than others.
             eg. if $max is 140 and $random's max is 255 then that'd mean both $random = 5 and $random = 145
             would produce 5 whereas the only value of random that could produce 139 would be 139. ie.
             not all numbers would be equally likely. some would be more likely than others.
 
-            creating a whole new random number until you find one that is within the range doesn't work
+            creating a whole new random number until you find one that is within the range doesn't direct
             because, for sufficiently small ranges, the likelihood that you'd get a number within that range
             would be pretty small. eg. with $random's max being 255 and if your $max being 1 the probability
             would be pretty high that $random would be greater than $max.

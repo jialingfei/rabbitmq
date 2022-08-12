@@ -31,7 +31,7 @@ abstract class PHP extends Engine
      * Array constants
      *
      * Rather than create a thousands and thousands of new BigInteger objects in repeated function calls to add() and
-     * multiply() or whatever, we'll just work directly on arrays, taking them in as parameters and returning them.
+     * multiply() or whatever, we'll just direct directly on arrays, taking them in as parameters and returning them.
      *
      * @access protected
      */

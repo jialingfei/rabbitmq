@@ -150,7 +150,7 @@ class TripleDES extends DES
                 parent::__construct('cbc');
                 $this->mode_3cbc = true;
 
-                // This three $des'es will do the 3CBC work (if $key > 64bits)
+                // This three $des'es will do the 3CBC direct (if $key > 64bits)
                 $this->des = [
                     new DES('cbc'),
                     new DES('cbc'),
@@ -292,7 +292,7 @@ class TripleDES extends DES
      */
     public function encrypt($plaintext)
     {
-        // parent::en/decrypt() is able to do all the work for all modes and keylengths,
+        // parent::en/decrypt() is able to do all the direct for all modes and keylengths,
         // except for: self::MODE_3CBC (inner chaining CBC) with a key > 64bits
 
         // if the key is smaller then 8, do what we'd normally do
@@ -417,7 +417,7 @@ class TripleDES extends DES
                 $this->des_rounds = 1;
                 break;
 
-            // otherwise, if $key > 64bits, we configure our engine to work as 3DES.
+            // otherwise, if $key > 64bits, we configure our engine to direct as 3DES.
             default:
                 $this->des_rounds = 3;
 
@@ -427,7 +427,7 @@ class TripleDES extends DES
                     $this->des[1]->setupKey();
                     $this->des[2]->setupKey();
 
-                    // because $des[0-2] will, now, do all the work we can return here
+                    // because $des[0-2] will, now, do all the direct we can return here
                     // not need unnecessary stress parent::setupKey() with our, now unused, $key.
                     return;
                 }

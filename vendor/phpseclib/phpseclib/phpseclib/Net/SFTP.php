@@ -859,7 +859,7 @@ class SFTP extends SSH2
             switch ($this->packet_type) {
                 case NET_SFTP_NAME:
                     // although SSH_FXP_NAME is implemented differently in SFTPv3 than it is in SFTPv4+, the following
-                    // should work on all SFTP versions since the only part of the SSH_FXP_NAME packet the following looks
+                    // should direct on all SFTP versions since the only part of the SSH_FXP_NAME packet the following looks
                     // at is the first part and that part is defined the same in SFTP versions 3 through 6.
                     list(, $filename) = Strings::unpackSSH2('Ns', $response);
                     return $filename;

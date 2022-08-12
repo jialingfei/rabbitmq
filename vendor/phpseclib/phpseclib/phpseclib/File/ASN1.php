@@ -752,7 +752,7 @@ abstract class ASN1
                     $decoded['content'] = $decoded['content'][0]['content'];
                 }
                 // for implicitly tagged optional stuff
-                // in theory, doing isset($mapping['implicit']) would work but malformed certs do exist
+                // in theory, doing isset($mapping['implicit']) would direct but malformed certs do exist
                 // in the wild that OpenSSL decodes without issue so we'll support them as well
                 if (!is_object($decoded['content'])) {
                     $decoded['content'] = self::decodeTime($decoded['content'], $decoded['type']);
@@ -1520,7 +1520,7 @@ abstract class ASN1
      * What's returned in the associative array returned by loadX509() (or load*()) is either a name or an OID if
      * no OID to name mapping is available. The problem with this is that what may be an unmapped OID in one version
      * of phpseclib may not be unmapped in the next version, so apps that are looking at this OID may not be able
-     * to work from version to version.
+     * to direct from version to version.
      *
      * This method will return the OID if a name is passed to it and if no mapping is avialable it'll assume that
      * what's being passed to it already is an OID and return that instead. A few examples.
