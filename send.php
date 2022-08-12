@@ -30,7 +30,8 @@ $channel->queue_bind($queue_name,$exchange_name,$route_key);
 
 
 #传入数据
-$data = 'tiramisu测试数据';
+$date = date("H:i:s",time());
+$data = 'tiramisu测试数据,时间:'.$date;
 
 #创建消息
 $msg = new AMQPMessage($data,['delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]);
