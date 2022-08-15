@@ -47,3 +47,4 @@ http://localhost:15672/#/
 1. [direct模式 定向](./direct)
 2. [fanout模式 广播](./fanout)
 3. [routing模式 ](./routing)
+4. [延迟发送](./delayed)
